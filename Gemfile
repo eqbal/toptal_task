@@ -44,6 +44,8 @@ gem 'devise', '~> 3.2.2'
 group :development, :test do
   gem 'rails_layout', '~> 0.5.11'  # Bootstrap 3 layout generator
   gem "factory_girl_rails"
+  gem "database_cleaner", :group => :test
+  gem "email_spec", :group => :test  
 end
 
 gem 'bootstrap-sass', '~> 3.0.3.0'
@@ -56,6 +58,7 @@ end
 
 # Capybara
 group :test do
+  gem 'selenium-webdriver', '2.35.1' 
   gem "capybara", '~> 2.2.1'
 end
 
