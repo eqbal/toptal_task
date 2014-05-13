@@ -8,6 +8,7 @@ gem 'jquery-rails', '~> 3.0.4'
 gem 'turbolinks', '~> 2.1.0'
 gem 'jbuilder', '~> 1.5.3'
 gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'jquery-ui-rails'
 
 group :doc do
   gem 'sdoc', require: false
@@ -42,6 +43,7 @@ gem 'devise', '~> 3.2.2'
 # Bootstrap 3
 group :development, :test do
   gem 'rails_layout', '~> 0.5.11'  # Bootstrap 3 layout generator
+  gem "factory_girl_rails"
 end
 
 gem 'bootstrap-sass', '~> 3.0.3.0'
@@ -56,3 +58,6 @@ end
 group :test do
   gem "capybara", '~> 2.2.1'
 end
+
+gem "simple_form", ">= 2.0.4"
+
