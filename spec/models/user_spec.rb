@@ -9,6 +9,7 @@ describe User do
       :password => "changeme",
       :password_confirmation => "changeme"
     }
+    @user = User.new(@attr)
   end
 
   it "should create a new instance given a valid attribute" do

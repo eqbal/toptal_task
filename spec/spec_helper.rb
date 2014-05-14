@@ -43,20 +43,13 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
-
+  
+  config.include FactoryGirl::Syntax::Methods
 
   config.include Capybara::DSL
   # in RSpec 3 this will no longer be necessary.
-  config.treat_symbols_as_metadata_keys_with_true_values = true
-  
-  config.before(:suite) do
-    DatabaseCleaner.strategy = :truncation
-  end
-  config.before(:each) do
-    DatabaseCleaner.start
-  end
-  config.after(:each) do
-    DatabaseCleaner.clean
-  end
+  config.treat_symbols_as_metadata_keys_with_true_values = true  
+
 
 end
+

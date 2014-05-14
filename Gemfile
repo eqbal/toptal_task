@@ -16,7 +16,8 @@ end
 
 # development gems
 group :development, :test do
-  gem 'sqlite3', '~> 1.3.8'    # dev & test database
+  # gem 'sqlite3', '~> 1.3.8'    # dev & test database
+  gem 'mysql2'
   gem 'figaro', '~> 0.7.0'     # env variables
 end
 
@@ -58,8 +59,9 @@ end
 
 # Capybara
 group :test do
-  gem 'selenium-webdriver', '2.35.1' 
-  gem "capybara", '~> 2.2.1'
+  # gem 'selenium-webdriver'  
+  gem "capybara"
+  # gem 'capybara-webkit'
 end
 
 gem "simple_form", ">= 2.0.4"

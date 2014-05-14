@@ -9,7 +9,7 @@ describe "user registration" do
     fill_in "Password",              :with => "ilovegrapes"
     fill_in "Password confirmation", :with => "ilovegrapes"
 
-    click_button "Sign up"
+    click_button "Sign up"    
 
     expect(page).to have_content("Welcome! You have signed up successfully.")
   end
