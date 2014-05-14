@@ -12,6 +12,10 @@ describe User do
     @user = User.new(@attr)
   end
 
+  it "should have many entries association" do
+    expect{@user.entries}.not_to raise_error
+  end
+
   it "should create a new instance given a valid attribute" do
     User.create!(@attr)
   end

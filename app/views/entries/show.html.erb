@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @entry.user_id %>
+</p>
+
+<p>
+  <strong>Distance:</strong>
+  <%= @entry.distance %>
+</p>
+
+<p>
+  <strong>Time period:</strong>
+  <%= @entry.time_period %>
+</p>
+
+<p>
+  <strong>Date time:</strong>
+  <%= @entry.date_time %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @entry.created_at %>
+</p>
+
+<p>
+  <strong>Updated at:</strong>
+  <%= @entry.updated_at %>
+</p>
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>

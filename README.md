@@ -4,8 +4,8 @@ TopTal Exercise
 This is a simple solution for TopTal exercise below:
 
 > Write an application that tracks jogging times of users
-> - User must be able to create an account and log in
-> - When logged in, user can see his times he entered
+> - User must be able to create an account and log in 
+> - When logged in, user can see his times he entered 
 > - Each time entry when entered has a date, distance, and time
 > - When displayed, each time entry has an average speed
 > - Filter by dates from-to

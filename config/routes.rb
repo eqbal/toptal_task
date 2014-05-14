@@ -1,6 +1,7 @@
 ToptalTask::Application.routes.draw do
-  root "pages#home"    
-  get "home", to: "pages#home", as: "home"
+  resources :entries
+
+  root "entries#index"    
   
     
   devise_for :users

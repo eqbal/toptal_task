@@ -3,7 +3,7 @@ require "spec_helper"
 describe "user sign in" do
 	
   before(:each) do
-	user = create(:admin)
+	   user = create(:admin)
   end
 
   it "allows users to sign in after they have registered" do        

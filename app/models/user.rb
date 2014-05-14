@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
+  # relationships 
+  has_many :entries
+
+
   # Pagination
   paginates_per 100
   
