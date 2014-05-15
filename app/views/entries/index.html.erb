@@ -5,42 +5,41 @@
   <%= paginate @entries %>
 </div>
 
-
-
-<div id="entry-form">
-  <%= render 'form' %>    
+<div class="well">
+  <div id="entry-form">
+    <%= render 'form' %>    
+  </div>  
 </div>
+
 
 <hr>
 
 <table class="table table-striped">
-  <thead>
+  
     <tr>
       <th>Distance</th>
       <th>Time period</th>
       <th>Date time</th>
-      <th>Created at</th>
-      <th>Updated at</th>
-      <th></th>
-      <th></th>
+      <th>Created at</th>      
       <th></th>
     </tr>
-  </thead>
+  
 
-  <tbody>
+  
     <% @entries.each do |entry| %>
       <tr>
         <td><%= entry.distance %></td>
         <td><%= entry.time_period %></td>
         <td><%= entry.date_time %></td>
-        <td><%= time_ago_in_words(entry.created_at) %></td>
-        <td><%= time_ago_in_words(entry.updated_at) %></td>
-        <td><%= link_to 'Show', entry, :class => "btn btn-mini btn-info" %></td>
-        <td><%= link_to 'Edit', edit_entry_path(entry), :class => "btn btn-mini btn-primary" %></td>
-        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-mini btn-danger" %></td>
+        <td><%= time_ago_in_words(entry.created_at) %></td>        
+        <td class="actions-cell">
+          <%= link_to 'Show', entry, :class => "btn btn-sm btn-info" %>
+          <%= link_to 'Edit', edit_entry_path(entry), :class => "btn btn-sm btn-primary" %>
+          <%= link_to 'X', entry, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-sm btn-danger" %>
+        </td>
       </tr>
     <% end %>
-  </tbody>
+  
 </table>
 
 <br>
