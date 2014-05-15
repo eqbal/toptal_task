@@ -6,7 +6,8 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.all
+    @entry = Entry.new
+    @entries = current_user.entries.page params[:page]
   end
 
   # GET /entries/1

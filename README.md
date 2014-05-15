@@ -41,6 +41,8 @@ Steps to run it locally:
 Notes:
 ---
 
+- Please login as an admin (username:admin / pass:1234) so you can check out all the admins features like tracking other accounts. 
+
 - I chose Rails 4 for this exercise for simplicity, but usually in production mode I use Sinatra/Grape/Rack for simple API calls. 
 
 - I'm using Ruby 2.0 (MRI) for simplicity, usually for production environment I use jRuby implementation with threaded server like Puma.
