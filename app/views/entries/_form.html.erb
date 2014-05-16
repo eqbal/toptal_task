@@ -3,7 +3,12 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <%= f.input :distance, hint: "In Meteres" %>
+      <%= f.label :distance %> <br/>      
+      <%= f.input_field :distance, hint: "km / mile" %>
+      <%= f.input_field :distance_type, collection: Entry::D_Type.map{|k,v| [v,k]}, :include_blank => false%>
+      <br/>
+      <br/>
+      
       <%= f.input :time_period, hint: "In Minutes" %>
       <%= f.input :date_time %>
     </div>

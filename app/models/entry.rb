@@ -6,6 +6,15 @@ class Entry < ActiveRecord::Base
 	
 
     # Pagination
-    paginates_per 100
+    paginates_per 30
     
+    # Distance Type
+    D_Type = {
+    	0 	=> "Km",
+    	1	=> "Miles"
+    }
+
+    def readable_distance_type
+    	D_Type[distance_type]
+    end
 end

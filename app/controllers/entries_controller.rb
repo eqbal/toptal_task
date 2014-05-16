@@ -7,7 +7,9 @@ class EntriesController < ApplicationController
   # GET /entries.json
   def index
     @entry = Entry.new
-    @entries = current_user.entries.page params[:page]
+    @entries = current_user.entries.
+                            order(created_at: :desc).
+                            page params[:page]
   end
 
   # GET /entries/1
@@ -73,6 +75,6 @@ class EntriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def entry_params
-      params.require(:entry).permit(:user_id, :distance, :time_period, :date_time, :created_at, :updated_at)
+      params.require(:entry).permit(:user_id, :distance, :time_period, :date_time, :created_at, :updated_at, :distance_type)
     end
 end
