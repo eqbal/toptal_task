@@ -17,10 +17,6 @@ class EntriesController < ApplicationController
   def show
   end
 
-  # GET /entries/new
-  def new
-    @entry = Entry.new
-  end
 
   # GET /entries/1/edit
   def edit
@@ -29,18 +25,15 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.json
   def create
+    return unless request.xhr?
+
     @entry = Entry.new(entry_params)
     @entry.user_id = current_user.id
 
     respond_to do |format|
-      if @entry.save
-        format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @entry }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
-      end
+      format.js
     end
+    
   end
 
   # PATCH/PUT /entries/1
