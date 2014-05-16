@@ -17,4 +17,9 @@ class Entry < ActiveRecord::Base
     def readable_distance_type
     	D_Type[distance_type]
     end
+
+    def avg_speed
+    	speed = distance/(time_period/60)    	
+    	sprintf("%0.2f", speed)
+    end
 end

@@ -20,6 +20,7 @@
       <th>Distance</th>
       <th>Time period</th>
       <th>Date time</th>
+      <th>Avg Speed</th>
       <th>Created at</th>      
       <th></th>
     </tr>
@@ -31,6 +32,7 @@
         <td><%= entry.distance %> <small><%= entry.readable_distance_type %></small></td>
         <td><%= entry.time_period %></td>
         <td><%= entry.date_time %></td>
+        <td><%= entry.avg_speed %> <small><%= entry.readable_distance_type %>/H</small> </td>
         <td><%= time_ago_in_words(entry.created_at) %></td>        
         <td class="actions-cell">
           <%= link_to 'Show', entry, :class => "btn btn-sm btn-info" %>

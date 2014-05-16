@@ -61,6 +61,15 @@ describe Entry do
        expect(entry).not_to be_valid
      end          
    end
-   
+
+
+   describe "#avg_speed" do
+    it "should return avg speed of 50 km/h for distance 100 km and time time_period 120 min" do
+      entry.distance      = 100.0
+      entry.distance_type = Entry::D_Type.invert['Km']
+      entry.time_period   = 120
+      expect(entry.avg_speed).to eq("50.00")
+    end
+   end
 
 end

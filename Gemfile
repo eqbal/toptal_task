@@ -62,7 +62,7 @@ end
 group :test do
   # gem 'selenium-webdriver'  
   gem "capybara"
-  # gem 'capybara-webkit'
+  gem 'capybara-webkit'
 end
 
 gem "simple_form", ">= 2.0.4"
