@@ -13,7 +13,7 @@ describe Entry do
 
      it "should have a distance attribute" do
        expect(entry).to respond_to(:distance)
-       expect(entry.distance).to be_kind_of(Integer)
+       expect(entry.distance).to be_kind_of(Float)
      end
 
      it "should only accept Numeric values for distance" do

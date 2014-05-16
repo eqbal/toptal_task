@@ -9,8 +9,8 @@
       <br/>
       <br/>
       
-      <%= f.input :time_period, hint: "In Minutes" %>
-      <%= f.input :date_time %>
+      <%= f.input :time_period, hint: "In Minutes" %>      
+      <%= f.input :date_time, input_html: { id: 'datetimepicker' } %> 
     </div>
 
     <br/>
@@ -19,5 +19,3 @@
     </div>
   <% end %>  
 </div>
-
-

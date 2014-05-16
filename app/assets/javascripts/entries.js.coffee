@@ -5,3 +5,5 @@ jQuery ->
 	$('#add_entry_link').click ->
 		$('#entry-form').slideToggle()
 		$('#add_entry_link').html('Show Form')
+
+	$('#datetimepicker').datetimepicker();
