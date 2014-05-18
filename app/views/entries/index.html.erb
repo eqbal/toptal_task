@@ -1,4 +1,3 @@
-<h4>Entries</h4>
 
 <div class="text-center">
   <p><%= page_entries_info @entries %></p>
@@ -15,7 +14,7 @@
 
 <hr>
 
-<table class="table table-striped">
+<table class="table table-striped" id="myTable">
   
     <tr>
       <th>Distance</th>
@@ -25,23 +24,8 @@
       <th>Created at</th>      
       <th></th>
     </tr>
-  
 
-  
-    <% @entries.each do |entry| %>
-      <tr>
-        <td><%= entry.distance %> <small><%= entry.readable_distance_type %></small></td>
-        <td><%= entry.time_period %></td>
-        <td><%= entry.date_time %></td>
-        <td><%= entry.avg_speed %> <small><%= entry.readable_distance_type %>/H</small> </td>
-        <td><%= time_ago_in_words(entry.created_at) %></td>        
-        <td class="actions-cell">
-          <%= link_to 'Show', entry, :class => "btn btn-sm btn-info" %>
-          <%= link_to 'Edit', edit_entry_path(entry), :class => "btn btn-sm btn-primary" %>
-          <%= link_to 'X', entry, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-sm btn-danger" %>
-        </td>
-      </tr>
-    <% end %>
+    <%= render @entries %> 
   
 </table>
 

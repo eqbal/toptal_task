@@ -53,12 +53,15 @@ class EntriesController < ApplicationController
   # DELETE /entries/1
   # DELETE /entries/1.json
   def destroy
-    @entry.destroy
+    return unless request.xhr?
+
+    @entry = Entry.find(params[:id])
+
     respond_to do |format|
-      format.html { redirect_to entries_url }
-      format.json { head :no_content }
+      format.js
     end
   end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.

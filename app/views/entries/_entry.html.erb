@@ -1,0 +1,16 @@
+<tr id="entry_<%=entry.id%>">
+  <td><%= entry.distance %> <small><%= entry.readable_distance_type %></small></td>
+  <td><%= entry.time_period %></td>
+  <td><%= entry.date_time %></td>
+  <td><%= entry.avg_speed %> <small><%= entry.readable_distance_type %>/H</small> </td>
+  <td><%= time_ago_in_words(entry.created_at) %></td>        
+  <td class="actions-cell">
+    <%= link_to 'Show', entry, :class => "btn btn-sm btn-info" %>
+    <%= link_to "X", 
+                entry_path(entry), 
+                method: :delete, 
+                remote: true, 
+                data: {confirm: "Are you sure you want to permanently delete this entry?"}, 
+                class: "btn btn-sm btn-danger" %>
+  </td>
+</tr>

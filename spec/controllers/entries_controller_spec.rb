@@ -90,19 +90,5 @@ describe EntriesController do
     end
   end
 
-  describe "DELETE destroy" do
-    it "destroys the requested entry" do
-      entry = Entry.create! valid_attributes
-      expect {
-        delete :destroy, {:id => entry.to_param}, valid_session
-      }.to change(Entry, :count).by(-1)
-    end
-
-    it "redirects to the entries list" do
-      entry = Entry.create! valid_attributes
-      delete :destroy, {:id => entry.to_param}, valid_session
-      response.should redirect_to(entries_url)
-    end
-  end
 
 end
