@@ -47,9 +47,10 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
 
   config.include Capybara::DSL
-  # in RSpec 3 this will no longer be necessary.
+
   config.treat_symbols_as_metadata_keys_with_true_values = true  
 
+  Capybara.javascript_driver = :webkit
 
 end
 

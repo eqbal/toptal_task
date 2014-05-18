@@ -10,8 +10,20 @@
 
 #     let(:submit) {'Create Entry'}
     
+      # context 'Invalid params' do
+      		
+      # end	
+
+      # context 'Valid params' do
+      	
+      # end
 #     describe "with invalid params" do
-#       it "should not create an entry", :js do        
+#       it "should not create an entry", :js do     
+			# fill_in "distance", with: 6
+			# select  "km", from: :distance_type
+			# ...
+			# ...
+			# expect(page).to have_content('everage_speed_value_of_params')
 #       end
 #     end
 

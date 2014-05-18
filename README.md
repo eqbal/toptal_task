@@ -4,10 +4,10 @@ TopTal Exercise
 This is a simple solution for TopTal exercise below:
 
 > Write an application that tracks jogging times of users
-> - User must be able to create an account and log in 
-> - When logged in, user can see his times he entered 
-> - Each time entry when entered has a date, distance, and time
-> - When displayed, each time entry has an average speed
+> - User must be able to create an account and log in (done)
+> - When logged in, user can see his times he entered (done)
+> - Each time entry when entered has a date, distance, and time (done)
+> - When displayed, each time entry has an average speed (done)
 > - Filter by dates from-to
 > - Report on average speed & distance per week
 > - REST API – for all user actions. In any case you should be able to explain how a REST API works and demonstrate > that by creating functional tests that use the REST Layer directly.
@@ -29,19 +29,19 @@ Technologies used
  - Ruby on Rails (-v 4.0.4)
  - jQuery
  - Rspec/Capybara/Selenium
- - Twitter Bootstrap
+ - Twitter Bootstrap 3.0
 
 
 Steps to run it locally:
 ---
     bundle exec rake db:migrate
+    bundle exec rake db:seed
     bundle exec rails s
 
+Please login as an admin (username: admin / pass: 1234) so you can check out all the admins features like tracking other accounts.
 
 Notes:
 ---
-
-- Please login as an admin (username:admin / pass:1234) so you can check out all the admins features like tracking other accounts. 
 
 - I chose Rails 4 for this exercise for simplicity, but usually in production mode I use Sinatra/Grape/Rack for simple API calls. 
 

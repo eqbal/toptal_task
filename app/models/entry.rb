@@ -19,7 +19,7 @@ class Entry < ActiveRecord::Base
     end
 
     def avg_speed
-    	speed = distance/(time_period/60)    	
+    	speed = (distance.to_f)/(time_period.to_f/60)
     	sprintf("%0.2f", speed)
     end
 end
