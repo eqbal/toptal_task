@@ -5,11 +5,11 @@ gem 'sass-rails', '~> 4.0.1'
 gem 'uglifier', '~> 2.4.0'
 gem 'coffee-rails', '~> 4.0.1'
 gem 'jquery-rails', '~> 3.0.4'
+gem 'jquery-ui-rails'
 gem 'turbolinks', '~> 2.1.0'
 gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 1.5.3'
 gem 'bcrypt-ruby', '~> 3.1.2'
-gem 'jquery-ui-rails'
 
 group :doc do
   gem 'sdoc', require: false
@@ -60,9 +60,8 @@ end
 
 # Capybara
 group :test do
-  # gem 'selenium-webdriver'  
-  gem "capybara"
-  gem 'capybara-webkit'
+  gem 'selenium-webdriver'  
+  gem "capybara"  
 end
 
 gem "simple_form", ">= 2.0.4"

@@ -1,55 +1,68 @@
-# require 'spec_helper'
+require 'spec_helper'
 
-# describe "Entries Page" do
+describe "Entries Page" do
   
-#   subject { page }
-
-#   describe "create new entry" do
+  describe "create new entry" do
     
-#     before { visit root_path }
+   	let(:entry)  { create(:entry) }
+  	let(:user)   { create(:user) }
 
-#     let(:submit) {'Create Entry'}
-    
-      # context 'Invalid params' do
-      		
-      # end	
+    before { sign_in_as_user(user) }
 
-      # context 'Valid params' do
-      	
-      # end
-#     describe "with invalid params" do
-#       it "should not create an entry", :js do     
-			# fill_in "distance", with: 6
-			# select  "km", from: :distance_type
-			# ...
-			# ...
-			# expect(page).to have_content('everage_speed_value_of_params')
-#       end
-#     end
+	context 'Invalid params' do
+  	  
+  	  it "should return error message when distance is not a number", :js do       	  	
+  	  	fill_in_form("not a number", "Km", 30)
+		click_on "Create Entry"
 
+		expect(page).to have_content("Distance is not a number")
+	  end   
 
-#     describe "with valid params" do
+  	  it "should return error message when distance is empty", :js do     
+  	  	fill_in_form("", "Km", 30)
+		click_on "Create Entry"
+
+		expect(page).to have_content("Distance can't be blank")
+	  end 
+
+  	  it "should return error message when time period is not a number", :js do       	  	
+  	  	fill_in_form(10, "Km", "some string")
+		click_on "Create Entry"
+
+		expect(page).to have_content("Time period is not a number")
+	  end 	  
+
+	end	
+
+	context 'Valid params' do
       
-#       before do 
-#         fill_in "Uid", with: "player1"
-#         click_button submit
-#       end
+      it "should create an Entry with valid params", :js do
+      	
+      end  
 
-#       it "should create an Offer", :js do
-#         expect change(Offer, :count).by(1)        
-#       end  
+      it "should create an Offer with default params set", :js do
+      end
 
-#       it "should create an Offer with default params set", :js do
-#         offer = Offer.find_by_uid("player1")        
-#         expect(offer.request_timestamp).not_to be_nil
-#       end
+      it "should display the offers page with either no content items, or all content items if present", :js do
+      end	  	
+	end
+    
+  end
+end
 
-#       it "should display the offers page with either no content items, or all content items if present", :js do
-#         page.should satisfy do
-#           (page.has_css?(".offer")) || (page.has_css?(".no_offers"))
-#         end
-#       end
-#     end
 
-#   end
-# end
+
+def sign_in_as_user(user)
+    visit "/users/sign_in"
+    fill_in "Username", :with => user.username
+    fill_in "Password", :with => user.password
+    click_button "Sign in"
+end
+
+
+def fill_in_form(distance, dt="Km", period, datetime)
+	fill_in "Distance", with: distance
+	select  "Km", from: "entry_distance_type"
+	fill_in "entry_time_period", with: period
+	fill_in "entry[date_time]", with: (datetime || DateTime.now.strftime("%Y-%m-%d %H:%M"))
+end
