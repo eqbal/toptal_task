@@ -3,8 +3,6 @@ class EntriesController < ApplicationController
   before_action :authenticate_user!
 
 
-  # GET /entries
-  # GET /entries.json
   def index
     @entry = Entry.new
     @entries = current_user.entries.
@@ -12,18 +10,11 @@ class EntriesController < ApplicationController
                             page params[:page]
   end
 
-  # GET /entries/1
-  # GET /entries/1.json
+
   def show
   end
 
 
-  # GET /entries/1/edit
-  def edit
-  end
-
-  # POST /entries
-  # POST /entries.json
   def create
     return unless request.xhr?
 
@@ -36,22 +27,7 @@ class EntriesController < ApplicationController
     
   end
 
-  # PATCH/PUT /entries/1
-  # PATCH/PUT /entries/1.json
-  def update
-    respond_to do |format|
-      if @entry.update(entry_params)
-        format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
-  # DELETE /entries/1
-  # DELETE /entries/1.json
   def destroy
     return unless request.xhr?
 
@@ -61,7 +37,7 @@ class EntriesController < ApplicationController
       format.js
     end
   end
-  
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
