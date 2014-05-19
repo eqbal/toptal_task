@@ -19,11 +19,6 @@ class Entry < ActiveRecord::Base
         Date.strptime(date, "%m/%d/%Y").strftime('%W')
     end
 
-    def self.weekly
-        Entry.all.group_by(&:week).sort.each do |week, entries|
-            yield week, entries
-        end
-    end
 
     def readable_distance_type
     	D_Type[distance_type]

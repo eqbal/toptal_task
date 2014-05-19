@@ -12,7 +12,7 @@
       <th>Avg Speed</th>            
     </tr>
 
-    <% Entry.weekly do |week, entries| %>
+    <% @user.weekly_entries do |week, entries| %>
 	    <tr>
 	      <td><%= week %></td>
 	      <td><%= weeks_to_date_from(week) %></td>

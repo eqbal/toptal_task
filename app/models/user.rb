@@ -32,6 +32,12 @@ class User < ActiveRecord::Base
   # :email
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
   
+  def weekly_entries
+    entries.group_by(&:week).sort.each do |week, entries|
+        yield week, entries
+    end    
+  end  
+
   def self.paged(page_number)
     order(admin: :desc, username: :asc).page page_number
   end

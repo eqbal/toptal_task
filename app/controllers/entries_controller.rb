@@ -37,6 +37,7 @@ class EntriesController < ApplicationController
   end
 
   def statistics
+    @user = current_user
   end
 
 
