@@ -15,11 +15,11 @@
     <% Entry.weekly do |week, entries| %>
 	    <tr>
 	      <td><%= week %></td>
-	      <td>From</td>
-	      <td>To</td>
+	      <td><%= weeks_to_date_from(week) %></td>
+	      <td><%= weeks_to_date_to(week) %></td>
 	      <td><%= entries.count %></td>
-	      <td>Avg Distance</td>
-	      <td>Avg Speed</td>
+	      <td><%= avg_distance(entries) %></td>
+	      <td><%= avg_speed(entries) %></td>
 	    </tr>
     <% end %>
 

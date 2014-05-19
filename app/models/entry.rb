@@ -29,8 +29,25 @@ class Entry < ActiveRecord::Base
     	D_Type[distance_type]
     end
 
+    def is_km?
+       D_Type[distance_type] == 'Km'
+    end
+
+    def is_mile?
+       D_Type[distance_type] == 'Miles'
+    end
+
     def avg_speed
     	speed = (distance.to_f)/(time_period.to_f/60)
     	sprintf("%0.2f", speed)
     end
+
+    def distance_in_km
+        is_mile? ? (distance.to_f*1.60) : (distance.to_f)
+    end
+
+    def speed_in_km
+        distance_in_km/(time_period.to_f/60)
+    end
+
 end
