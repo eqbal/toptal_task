@@ -12,5 +12,14 @@ ToptalTask::Application.routes.draw do
     root "base#index"
     resources :users
   end
-  
+
+  # namespace :api do
+  #   namespace :v1 do
+	 #    post   'registrations' => 'registrations#create', :as => 'register'
+	 #    post   'sessions' => 'sessions#create', :as => 'login'
+	 #    delete 'sessions' => 'sessions#destroy', :as => 'logout'
+	 #    get    'test'     => 'test#index', :as => 'test'
+  #   end
+  # end	
+
 end

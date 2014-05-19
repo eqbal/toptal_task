@@ -45,4 +45,5 @@ class Entry < ActiveRecord::Base
         distance_in_km/(time_period.to_f/60)
     end
 
+
 end

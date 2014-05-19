@@ -38,6 +38,10 @@ class User < ActiveRecord::Base
     end    
   end  
 
+  def search_entries(from, to)
+    entries.where(:created_at => from..to)
+  end
+
   def self.paged(page_number)
     order(admin: :desc, username: :asc).page page_number
   end
