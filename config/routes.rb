@@ -1,8 +1,10 @@
 ToptalTask::Application.routes.draw do
-  resources :entries
+  
+  resources :entries do 
+  	get 'statistics', :on => :collection
+  end
 
   root "entries#index"    
-  
     
   devise_for :users
   

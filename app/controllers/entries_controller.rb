@@ -1,5 +1,5 @@
 class EntriesController < ApplicationController
-  before_action :set_entry, only: [:show, :edit, :update, :destroy]
+  before_action :set_entry, only: [:show, :destroy]
   before_action :authenticate_user!
 
 
@@ -31,11 +31,12 @@ class EntriesController < ApplicationController
   def destroy
     return unless request.xhr?
 
-    @entry = Entry.find(params[:id])
-
     respond_to do |format|
       format.js
     end
+  end
+
+  def statistics
   end
 
 
