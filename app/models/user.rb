@@ -39,7 +39,9 @@ class User < ActiveRecord::Base
   end  
 
   def search_entries(from, to)
-    entries.where(:created_at => from..to)
+    return unless (from && to)
+ 
+    entries.where(:date_time => from..to)
   end
 
   def self.paged(page_number)

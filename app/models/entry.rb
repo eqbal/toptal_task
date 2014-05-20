@@ -25,11 +25,11 @@ class Entry < ActiveRecord::Base
     end
 
     def is_km?
-       D_Type[distance_type] == 'Km'
+       readable_distance_type == 'Km'
     end
 
     def is_mile?
-       D_Type[distance_type] == 'Miles'
+       readable_distance_type == 'Miles'
     end
 
     def avg_speed

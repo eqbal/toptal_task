@@ -1,6 +1,7 @@
 ToptalTask::Application.routes.draw do
   
   get "search/index"
+  post "search/create"
   
   resources :entries do 
   	get 'statistics', :on => :collection

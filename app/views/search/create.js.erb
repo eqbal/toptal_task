@@ -1,0 +1,12 @@
+<% if @entries && (@entries.size > 0) %>	
+	$('#errors').html('')
+	$('table tr:not(:first-child)').remove()
+	$('#myTable tr:first').after("<%= j render @entries %>");
+	$("#myTable").effect("highlight", {}, 1500)
+<% else %>
+	$('table tr:not(:first-child)').remove()
+	$('#errors').html("No Entries Found")
+	$("#errors").effect("highlight", {}, 1500)
+<% end %>
+
+
