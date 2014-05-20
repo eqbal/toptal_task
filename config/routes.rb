@@ -1,5 +1,7 @@
 ToptalTask::Application.routes.draw do
   
+  get "search/index"
+  
   resources :entries do 
   	get 'statistics', :on => :collection
   end
