@@ -52,6 +52,6 @@ RSpec.configure do |config|
 
   Capybara.javascript_driver = :selenium
 
-
+  config.include Requests::JsonHelpers, type: :request
 end
 

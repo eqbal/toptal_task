@@ -16,13 +16,14 @@ ToptalTask::Application.routes.draw do
     resources :users
   end
 
-  # namespace :api do
-  #   namespace :v1 do
-	 #    post   'registrations' => 'registrations#create', :as => 'register'
-	 #    post   'sessions' => 'sessions#create', :as => 'login'
-	 #    delete 'sessions' => 'sessions#destroy', :as => 'logout'
-	 #    get    'test'     => 'test#index', :as => 'test'
-  #   end
-  # end	
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1 do
+      resources :entries
+	    # post   'registrations' => 'registrations#create', :as => 'register'
+	    # post   'sessions' => 'sessions#create', :as => 'login'
+	    # delete 'sessions' => 'sessions#destroy', :as => 'logout'
+	    # get    'test'     => 'test#index', :as => 'test'
+    end
+  end	
 
 end
