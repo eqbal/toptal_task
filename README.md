@@ -16,7 +16,7 @@ This is a simple solution for TopTal exercise below:
 > - You will not be marked on graphic design, however, do try to keep it as tidy as possible. 
 
 
-You can checkout [My Solution](http://toptal-exercise.herokuapp.com) live at (http://toptal-exercise.herokuapp.com).
+You can checkout [My Solution](http://toptal-task.herokuapp.com/) live at (http://toptal-task.herokuapp.com/).
 
 How to run the tests:
 ---
@@ -43,7 +43,7 @@ Each user has a token and can find it by Footer of the page
 
 As for example, to get a list of entries for the logged in user 
 
-    /api/v1/entries?token=a5d8c7d95caa605e8db3d744e92c9c1f
+    http://toptal-task.herokuapp.com/api/v1/entries?token={your_token}
 
 Steps to run it locally:
 ---
@@ -56,11 +56,11 @@ Please login as an admin (username: admin / pass: 1234) so you can check out all
 Notes:
 ---
 
-- I chose Rails 4 for this exercise for simplicity, but usually in production mode I use Sinatra/Grape/Rack for simple API calls. 
+- This is a reponsive design which is compatable with all the mobile devices.
+
+- I chose Rails 4 for this exercise for simplicity, but usually in production mode I use Sinatra/Grape/Rack for simple API calls (for the RESTful API). 
 
 - I'm using Ruby 2.0 (MRI) for simplicity, usually for production environment I use jRuby implementation with threaded server like Puma.
-
-- I'm using SQLite for simplicity, in production I always prefer to use postgress/MySQL for RDBS (Preferably AWS RDS).
 
 - Please note that I didn't use background workers with Resque/RabbitMQ or even use Celluloid directly for performance enhancements (I didn't consider scalability at this stage).
 
