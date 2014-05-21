@@ -9,7 +9,9 @@
           <br/>
           Created By <%= link_to "Eqbal", "http://www.eqbalq.com" %>
           <br/>
-          Token: <%= current_user.api_key.token %>  
+          <% if current_user %>
+            Token: <%= current_user.api_key.token %>  
+          <% end %>
         </small></p>
       </div>
       
