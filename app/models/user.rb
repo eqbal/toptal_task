@@ -19,12 +19,16 @@ class User < ActiveRecord::Base
          
   # relationships 
   has_many :entries
+  has_one :api_key, dependent: :destroy
 
+  # Generate API Key to be useed with the API
+  after_create :create_api_key
 
   # Pagination
   paginates_per 100
   
   # Validations
+
   # :username
   validates :username, uniqueness: { case_sensitive: false }
   validates_format_of :username, with: /\A[a-zA-Z0-9]*\z/, on: :create, message: "can only contain letters and digits"
@@ -70,4 +74,12 @@ class User < ActiveRecord::Base
   def self.users_count
     where("admin = ? AND locked = ?",false,false).count
   end
+
+
+  private
+
+  def create_api_key
+    ApiKey.create!(:user_id => self.id)
+  end  
+
 end

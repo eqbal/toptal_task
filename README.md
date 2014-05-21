@@ -20,6 +20,7 @@ You can checkout [My Solution](http://toptal-exercise.herokuapp.com) live at (ht
 
 How to run the tests:
 ---
+    RAILS_ENV=test bundle exec rake db:migrate
     bundle exec rake spec
 
 Technologies used

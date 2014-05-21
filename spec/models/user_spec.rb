@@ -16,6 +16,11 @@ describe User do
     expect{@user.entries}.not_to raise_error
   end
 
+  it "Should generate API Key when we create new User and assign it to the user" do
+    new_user = User.create(@attr)
+    expect(new_user.api_key).not_to be_nil
+  end
+
   it "should create a new instance given a valid attribute" do
     User.create!(@attr)
   end
