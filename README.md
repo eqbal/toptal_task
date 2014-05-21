@@ -32,6 +32,18 @@ Technologies used
  - Rspec/Capybara/Selenium
  - Twitter Bootstrap 3.0
 
+How to test RESTful API
+---
+
+You can can check out the controller code at app/controllers/api/v1 the same as for the views (used jBuilder) and can be found at app/views/api/v1
+
+It's important to get the token and send it with the request so you can access the API
+
+Each user has a token and can find it by Footer of the page
+
+As for example, to get a list of entries for the logged in user 
+
+    /api/v1/entries?token=a5d8c7d95caa605e8db3d744e92c9c1f
 
 Steps to run it locally:
 ---
