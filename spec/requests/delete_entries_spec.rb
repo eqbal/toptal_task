@@ -11,7 +11,7 @@ describe "Delete Entry" do
     expect(page).to have_content('50.00 Km/H')
     click_link('X')
     page.driver.browser.switch_to.alert.accept
-	  expect(page).to have_no_content(entry.distance)
+    expect(page).to have_no_content(entry.distance)
   end   
 
 

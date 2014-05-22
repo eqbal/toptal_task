@@ -8,7 +8,7 @@ gem 'jquery-rails', '~> 3.0.4'
 gem 'jquery-ui-rails'
 gem 'turbolinks', '~> 2.1.0'
 gem 'jquery-turbolinks'
-gem 'jbuilder', '~> 1.5.3'
+gem 'jbuilder'
 gem 'bcrypt-ruby', '~> 3.1.2'
 
 group :doc do
