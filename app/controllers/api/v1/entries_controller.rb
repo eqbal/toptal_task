@@ -19,7 +19,7 @@ class Api::V1::EntriesController < Api::V1::BaseController
   end
 
   def create
-    @entry = Entry.new(params[:entry])
+    @entry = Entry.new(params[:entry].to_hash)
   
     @entry.user_id = @current_user.id
 
