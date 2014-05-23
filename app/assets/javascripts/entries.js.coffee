@@ -2,8 +2,13 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
-	$('#add_entry_link').click ->
-		$('#entry-form').slideToggle()
-		$('#add_entry_link').html('Show Form')
+  $('#datetimepicker').datetimepicker();
 
-	$('#datetimepicker').datetimepicker();
+  @swap_searches = (x) ->
+    if (x == 'insert')
+      $('#insert-form').hide()
+      $('#search-form').show('fade')
+
+    if (x == 'search')
+      $('#search-form').hide()
+      $('#insert-form').show('fade')

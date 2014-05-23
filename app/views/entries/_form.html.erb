@@ -17,7 +17,15 @@
 
     <br/>
     <div class="form-actions">
-      <%= f.button :submit %>
+      <%= f.button :submit, class: "btn btn-primary" %>      
+      <%= button_to_function "Search", "swap_searches('insert')", class: "btn search-btn" %>
     </div>
   <% end %>  
 </div>
+
+
+
+
+
+
+  

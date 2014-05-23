@@ -4,9 +4,14 @@
   <%= paginate @entries %>
 </div>
 
-<div class="well">
+<div class="well row">
   <div id="entry-form">
-    <%= render 'form' %>    
+    <div id="insert-form">      
+      <%= render 'form' %>          
+    </div>
+    <div id="search-form" style="display: none;">      
+      <%= render 'search/form' %>       
+    </div>
   </div>  
 </div>
 
