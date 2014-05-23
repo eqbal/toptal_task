@@ -5,7 +5,7 @@
   <td><%= entry.avg_speed %> <small><%= entry.readable_distance_type %>/H</small> </td>
   <td><%= time_ago_in_words(entry.created_at) %></td>        
   <td class="actions-cell">
-    <%= link_to 'Show', entry, :class => "btn btn-sm btn-info" %>
+    <%= link_to 'Show', entry, remote: true, :class => "btn btn-sm btn-info static-popup-link" %>
     <%= link_to "X", 
                 entry_path(entry), 
                 method: :delete, 

@@ -12,6 +12,7 @@ class EntriesController < ApplicationController
 
 
   def show
+    return unless request.xhr?    
   end
 
 

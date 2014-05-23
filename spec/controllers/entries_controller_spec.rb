@@ -28,13 +28,4 @@ describe EntriesController do
     end
   end
 
-  describe "GET show" do
-    it "assigns the requested entry as @entry" do
-      entry = Entry.create! valid_attributes
-      get :show, {:id => entry.to_param}, valid_session
-      assigns(:entry).should eq(entry)
-    end
-  end
-
-
 end
