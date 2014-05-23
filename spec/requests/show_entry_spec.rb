@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Delete Entry" do
+describe "Show Entry" do
 
   before do
     user   = create(:user)

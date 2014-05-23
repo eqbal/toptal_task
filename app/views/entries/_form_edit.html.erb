@@ -12,20 +12,22 @@
 
         <div class="form-inputs">
           <%= f.label :distance %> <br/>      
-          <%= f.input_field :distance, hint: "km / mile" %>
+          <%= f.input_field :distance, hint: "km / mile",
+                            id: 'distance-update'   %>
           <%= f.input_field :distance_type, 
                             collection: Entry::D_Type.map{|k,v| [v,k]}, 
                             include_blank: false%>
           <br/>
           <br/>
           
-          <%= f.input :time_period, hint: "In Minutes" %>      
+          <%= f.input_field :time_period, hint: "In Minutes", 
+                      id: 'timeperiod-update'  %>      
           <%= f.input :date_time, input_html: { id: 'datetimepicker-update' } %> 
         </div>
 
         <br/>
         <div class="form-actions">
-          <%= f.button :submit %>
+          <%= f.button :submit, id: 'update_entry' %>
         </div>
       <% end %>  
     </div>
