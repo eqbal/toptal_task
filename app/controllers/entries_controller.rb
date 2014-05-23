@@ -1,10 +1,11 @@
 class EntriesController < ApplicationController
-  before_action :set_entry, only: [:show, :destroy]
+  before_action :set_entry, only: [:show, :destroy, :edit, :update]
+  before_action :just_ajax, except: [:index, :statistics]
   before_action :authenticate_user!
 
 
   def index
-    @entry = Entry.new
+    @entry   = Entry.new
     @entries = current_user.entries.
                             order(created_at: :desc).
                             page params[:page]
@@ -12,13 +13,18 @@ class EntriesController < ApplicationController
 
 
   def show
-    return unless request.xhr?    
+  end
+
+
+  def edit    
+  end
+
+  def update
+    @updated = @entry.update_attributes(entry_params)
   end
 
 
   def create
-    return unless request.xhr?
-
     @entry = Entry.new(entry_params)
     @entry.user_id = current_user.id
 
@@ -30,8 +36,6 @@ class EntriesController < ApplicationController
 
 
   def destroy
-    return unless request.xhr?
-
     respond_to do |format|
       format.js
     end
@@ -46,6 +50,10 @@ class EntriesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_entry
       @entry = Entry.find(params[:id])
+    end
+
+    def just_ajax
+      return unless request.xhr?  
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

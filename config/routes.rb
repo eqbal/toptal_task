@@ -5,6 +5,7 @@ ToptalTask::Application.routes.draw do
   
   resources :entries do 
   	get 'statistics', :on => :collection
+    get 'edit', :on => :member
   end
 
   root "entries#index"    
@@ -20,7 +21,7 @@ ToptalTask::Application.routes.draw do
     namespace :v1 do
       resources :entries do 
         get 'report', :on => :collection
-        get 'search', :on => :collection   
+        get 'search', :on => :collection           
       end
     end
   end	
