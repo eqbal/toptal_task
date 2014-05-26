@@ -13,14 +13,14 @@
     </tr>
 
     <% @user.weekly_entries do |week, entries| %>
-	    <tr>
-	      <td><%= week %></td>
-	      <td><%= weeks_to_date_from(week) %></td>
-	      <td><%= weeks_to_date_to(week) %></td>
-	      <td><%= entries.count %></td>
-	      <td><%= avg_distance(entries) %></td>
-	      <td><%= avg_speed(entries) %></td>
-	    </tr>
+      <tr>
+        <td><%= week %></td>
+        <td><%= weeks_to_date_from(week) %></td>
+        <td><%= weeks_to_date_to(week) %></td>
+        <td><%= entries.count %></td>
+        <td><%= avg_distance(entries) %></td>
+        <td><%= avg_speed(entries) %></td>
+      </tr>
     <% end %>
 
   

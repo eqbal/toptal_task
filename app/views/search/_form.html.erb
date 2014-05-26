@@ -1,15 +1,15 @@
 
 <%= form_tag({controller: "search", action: "create"}, 
-			 method: 'post', html: {role: "form"},
-			 remote: true, id: 'search_form') do %>
+       method: 'post', html: {role: "form"},
+       remote: true, id: 'search_form') do %>
   <p>
-  	<%= label_tag("From: ") %>
-  	<%= text_field_tag :date_from, params[:date_from], id: 'datetimepicker1' %>
+    <%= label_tag("From: ") %>
+    <%= text_field_tag :date_from, params[:date_from], id: 'datetimepicker1' %>
   </p>
 
   <p>
-  	<%= label_tag("To: ") %>
-  	<%= text_field_tag :date_to, params[:date_to], id: 'datetimepicker2'  %>
+    <%= label_tag("To: ") %>
+    <%= text_field_tag :date_to, params[:date_to], id: 'datetimepicker2'  %>
   </p>
 
   <p>    

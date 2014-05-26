@@ -1,9 +1,9 @@
 <% if @entry.save %>
-	$('#myTable tr:first').after("<%= j render @entry %>");
-	$("#entry_<%= @entry.id %>").effect("highlight", {}, 1500);
+  $('#myTable tr:first').after("<%= j render @entry %>");
+  $("#entry_<%= @entry.id %>").effect("highlight", {}, 1500);
 <% else %>
-	$("#errors").html("<%= j render 'error', resource: @entry %>");
-	$("#errors").effect("highlight", {}, 1500);
+  $("#errors").html("<%= j render 'error', resource: @entry %>");
+  $("#errors").effect("highlight", {}, 1500);
 <% end %>
 
 

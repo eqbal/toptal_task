@@ -3,8 +3,8 @@ require 'spec_helper'
 describe "Entries" do
   describe "GET /entries" do
     
-  	let(:entry) { create(:entry) }
-  	let(:user)  { create(:user) }
+    let(:entry) { create(:entry) }
+    let(:user)  { create(:user) }
 
     it "Can see the index page with no errors" do      
       sign_in_as_user(user)

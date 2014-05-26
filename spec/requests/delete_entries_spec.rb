@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "Delete Entry" do
   	  
-	it "Should delete entry using ajax", :js do       	  		  
+  it "Should delete entry using ajax", :js do       	  		  
     user  = create(:user)
     entry = create(:entry, user_id: user.id)
 

@@ -3,20 +3,20 @@ require 'spec_helper'
 describe ApiKey do
   
   before(:each) do
-  	@user = create(:user)    
-  	@api_key = create(:api_key)
+    @user = create(:user)    
+    @api_key = create(:api_key)
   end
 
-  it "should belong to user" do   	
-  	expect(@user.api_key).not_to be_nil  	
+  it "should belong to user" do     
+    expect(@user.api_key).not_to be_nil   
   end
 
   it "should generate random token when we create one" do
-  	expect(@user.api_key.token).not_to be_nil
+    expect(@user.api_key.token).not_to be_nil
   end
 
-  it "should generate random token when we create one" do  	  	
-  	expect(@api_key.token).not_to be_nil
+  it "should generate random token when we create one" do       
+    expect(@api_key.token).not_to be_nil
   end
 
   it "should have a user_id attribute" do

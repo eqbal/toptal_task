@@ -6,7 +6,7 @@ describe Entry do
   
 
    it "should belong to user" do   	
-  	expect{entry.user}.not_to raise_error
+     expect{entry.user}.not_to raise_error
    end
 
    describe "#distance" do

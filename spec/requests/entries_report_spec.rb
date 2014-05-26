@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "Report Page" do
        	
-	let(:user)   { create(:user) }
+  let(:user)   { create(:user) }
   
   it "Should be able to check the page if the user logged in" do
     sign_in_as_user user

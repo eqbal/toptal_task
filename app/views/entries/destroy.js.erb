@@ -1,6 +1,6 @@
-<% if @entry.destroy %>				
-	$("#entry_<%= @entry.id %>").hide(600)
+<% if @entry.destroy %>       
+  $("#entry_<%= @entry.id %>").hide(600)
 <% else %>
-	$("#errors").html("<%= j render 'error', resource: @entry %>");
-	$("#errors").effect("highlight", {}, 1500);
+  $("#errors").html("<%= j render 'error', resource: @entry %>");
+  $("#errors").effect("highlight", {}, 1500);
 <% end %>
